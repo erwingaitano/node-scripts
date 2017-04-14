@@ -1,0 +1,14 @@
+{
+  "name": "filerename",
+  "version": "1.0.0",
+  "description": "Rename filenames easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erwin Gaitan O <erwingaitano@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
