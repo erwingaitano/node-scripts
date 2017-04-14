@@ -12,10 +12,10 @@ function getFileAndNewFilePaths(filePath, program, idx) {
   const filePathStats = fs.statSync(filePath);
   if (!filePathStats || !filePathStats.isFile()) return '';
 
-  let filename = path.basename(filePath);
-  const fileExt = path.extname(filename);
-  const dirname = path.dirname(filePath);
-  filename = filename.substr(0, filename.length - fileExt.length);
+  const pathParsed = path.parse(filePath);
+  let filename = pathParsed.name;
+  const fileExt = pathParsed.ext;
+  const dirname = pathParsed.dir;
 
   if (program.discardOriginalname) filename = program.prefix;
   else filename = program.prefix + filename;
