@@ -7,7 +7,7 @@ const readline = require('readline');
 
 // Functions
 
-function getNewname(filePath, program, idx) {
+function getFileAndNewFilePaths(filePath, program, idx) {
   if (!fs.existsSync(filePath)) return '';
   const filePathStats = fs.statSync(filePath);
   if (!filePathStats || !filePathStats.isFile()) return '';
@@ -49,7 +49,7 @@ if (process.argv.length === 2) {
   program.help();
 } else {
   const newFiles = program.args
-    .map((filePath, i) => getNewname(filePath, program, i))
+    .map((filePath, i) => getFileAndNewFilePaths(filePath, program, i))
     .filter(el => el !== '');
 
 
