@@ -52,7 +52,6 @@ if (process.argv.length === 2) {
     .map((filePath, i) => getFileAndNewFilePaths(filePath, program, i))
     .filter(el => el !== '');
 
-
   if (newFiles.length === 0) {
     console.log('No files matched!');
   } else {
@@ -60,9 +59,9 @@ if (process.argv.length === 2) {
     newFiles.forEach(el => console.log(el[1]));
 
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-    rl.question('\nContinue? y/n: ', (answer) => {
+    rl.question('\nContinue? y/n: ', answer => {
       if (answer === 'y') {
-        newFiles.forEach(((el) => { fs.renameSync(el[0], el[1]); }));
+        newFiles.forEach((el => { fs.renameSync(el[0], el[1]); }));
       }
 
       rl.close();
