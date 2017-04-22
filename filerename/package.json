@@ -9,6 +9,7 @@
   "author": "Erwin Gaitan O <erwingaitano@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "fs-extra": "^2.1.2"
   }
 }
