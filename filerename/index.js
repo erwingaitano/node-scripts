@@ -16,8 +16,8 @@ function getFileAndNewFilePaths(filePath, program, idx) {
   let filename = pathParsed.name;
   const fileExt = pathParsed.ext;
   const dirname = pathParsed.dir;
-  const prefix = program.prefix.replace(/\$1/g, filename);
-  const sufix = program.sufix.replace(/\$1/g, filename);
+  const prefix = program.prefix.replace(/\[1\]/g, filename);
+  const sufix = program.sufix.replace(/\[1\]/g, filename);
 
   if (program.discardOriginalname) filename = prefix;
   else filename = prefix + filename;
@@ -46,8 +46,8 @@ function getFileAndNewFilePaths(filePath, program, idx) {
 program.version('1.0.0')
   .usage('[options] <files>')
   .option('-m, --mode <number>', 'Renaming mode (number)', /^(number)$/)
-  .option('-p, --prefix <name>', 'Prefix for the new filename. Placeholder $1 for filename (no ext)', '')
-  .option('-s, --sufix <name>', 'Sufix for the new filename Placeholder $1 for filename (no ext)', '')
+  .option('-p, --prefix <name>', 'Prefix for the new filename. Placeholder [1] for filename (no ext)', '')
+  .option('-s, --sufix <name>', 'Sufix for the new filename Placeholder [1] for filename (no ext)', '')
   .option('-d, --discard-originalname', 'Discard original name', false)
   .option('-x, --sufix-after-extension', 'If the sufix should be after file extension', false)
   .parse(process.argv);
